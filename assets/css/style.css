@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  background-color: #004080;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: none;
+  flex-direction: column;
+  background-color: #004080;
+  color: white;
+  padding: 1rem;
+}
+
+.sidebar nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.footer-sidebar {
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.footer-sidebar a {
+  color: white;
+  margin: 0 0.5rem;
+}
+
+.filtro {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  display: block;
+}
+
+.card button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.paginacion a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #004080;
+  border-radius: 4px;
+  color: #004080;
+}
+
+.footer-desktop {
+  grid-area: footer;
+  background-color: #002855;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  display: none;
+}
+
+.footer-desktop i {
+  margin: 0 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.sidebar.visible {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #004080;
+  width: 100%;
+}
+
+.logo-sidebar {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .grid-container {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "sidebar main"
+      "footer main";
+    min-height: 100vh;
+  }
+
+  header {
+    display: none;
+  }
+
+  .sidebar {
+    display: flex !important;
+    height: 100%;
+  }
+
+  main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    min-height: 100%;
+  }
+
+  .catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .card {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .footer-sidebar {
+    display: none;
+  }
+
+  .footer-desktop {
+    display: block;
+    width: 200px;
+  }
+
+  .logo-sidebar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    color: white;
+  }
+
+  .logo-sidebar i {
+    font-size: 1.5rem;
+  }
+}

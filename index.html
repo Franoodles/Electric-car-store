@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autos eléctricos</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>
+        <div class="logo">
+          <i class="fas fa-car"></i>
+          <span>Autos eléctricos</span>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </header>
+
+      <aside class="sidebar" id="sidebar">
+        <div class="logo-sidebar">
+          <i class="fas fa-car"></i>
+          <span>Electric Cars</span>
+        </div>
+        <nav>
+          <a href="#">Inicio</a>
+          <a href="#">Catálogo</a>
+          <a href="#">Ofertas</a>
+          <a href="#">Contacto</a>
+        </nav>
+        <div class="footer-sidebar">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <p>Todos los derechos reservados</p>
+        </div>
+      </aside>
+
+      <main>
+        <div class="filtro">
+          <label for="orden">Ordenar por:</label>
+          <select id="orden">
+            <option value="precio">Precio</option>
+            <option value="modelo">Modelo</option>
+          </select>
+        </div>
+
+        <section class="catalogo">
+          <div class="card">
+            <img src="assets/imgs/Mini cooper 1.jpg" alt="Mini cooper Blue" />
+            <p>Model: Mini cooper eléctrico Blue</p>
+            <button>Ver más</button>
+          </div>
+          <div class="card">
+            <img src="assets/imgs/Mini ace alemán 1.webp" alt="Mini Aceman Red " />
+            <p>Model: Mini Aceman Red</p>
+            <button>Ver más</button>
+          </div>
+          <div class="card">
+            <img src="assets/imgs/Mini countyman 1.jpg" alt="Countryman Gray" />
+            <p>Model: Mini Countryman Gray</p>
+            <button>Ver más</button>
+          </div>
+          <div class="card">
+            <img src="assets/imgs/Mini cooper 3 puertas 1.jpg" alt="Mini Cooper 3 puertas green" />
+            <p>Model: Mini tres puertas Green</p>
+            <button>Ver más</button>
+          </div>
+        </section>
+
+        <div class="paginacion">
+          <a href="#">&laquo;</a>
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">&raquo;</a>
+        </div>
+      </main>
+
+      <footer class="footer-desktop">
+        <p>Todos los derechos reservados</p>
+        <div>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("sidebar").classList.toggle("visible");
+      });
+    </script>
+  </body>
+</html>
